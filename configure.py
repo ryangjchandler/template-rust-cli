@@ -44,5 +44,12 @@ Project author: {}
                     f.write(content)
                     f.truncate()
 
+    delete = ask("Delete configure.py? [Y/n]: ", required = False)
+    if delete == "n":
+        return
+    
+    os.remove("configure.py")
+    print("Done! :)")
+
 if __name__ == "__main__":
     main()
