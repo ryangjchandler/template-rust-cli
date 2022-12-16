@@ -32,12 +32,17 @@ Project author: {}
             if ".git" in file or "configure.py" in file:
                 continue
 
-            with open(file, "r+") as f:
-                content = f.read()
-                content = content.replace("template-rust-cli", name)
-                content = content.replace("My awesome Rust project.", description)
-                content = content.replace("Your Name <yourname@example.com>", author)
-                f.write(content)
+            files = ["Cargo.toml", "src/main.rs", "lib/Cargo.toml"]
+            for file in files:
+                with open(file, "r+") as f:
+                    content = f.read()
+                    content = content.replace("template-rust-cli", name)
+                    content = content.replace("template_rust_cli", name.replace("-", "_"))
+                    content = content.replace("My awesome Rust project.", description)
+                    content = content.replace("Your Name <yourname@example.com>", author)
+                    f.seek(0)
+                    f.write(content)
+                    f.truncate()
 
 if __name__ == "__main__":
     main()
