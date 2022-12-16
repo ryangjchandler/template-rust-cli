@@ -1,0 +1,17 @@
+[package]
+name = "template-rust-cli"
+version = "0.1.0"
+authors = [
+    "Your Name <yourname@example.com>"
+]
+edition = "2021"
+
+[dependencies]
+cmder = "0.6.1"
+colored = "2.0.0"
+template-rust-cli-lib = { path = "./lib" }
+
+[workspace]
+members = [
+    "lib"
+]
