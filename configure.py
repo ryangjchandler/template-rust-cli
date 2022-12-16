@@ -29,7 +29,15 @@ Project author: {}
 
     for _, _, files in os.walk(os.getcwd()):
         for file in files:
-            print(file)
+            if ".git" in file or "configure.py" in file
+                continue
+
+            with open(file, "r+") as f:
+                content = f.read()
+                content = content.replace("template-rust-cli", name)
+                content = content.replace("My awesome Rust project.", description)
+                content = content.replace("Your Name <yourname@example.com>", author)
+                f.write(content)
 
 if __name__ == "__main__":
     main()

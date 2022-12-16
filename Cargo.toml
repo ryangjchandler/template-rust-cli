@@ -1,5 +1,6 @@
 [package]
 name = "template-rust-cli"
+description = "My awesome Rust project."
 version = "0.1.0"
 authors = [
     "Your Name <yourname@example.com>"
