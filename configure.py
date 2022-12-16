@@ -29,7 +29,7 @@ Project author: {}
 
     for _, _, files in os.walk(os.getcwd()):
         for file in files:
-            if ".git" in file or "configure.py" in file
+            if ".git" in file or "configure.py" in file:
                 continue
 
             with open(file, "r+") as f:
